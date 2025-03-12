@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar Energy Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #000;
+      color: #fff;
+    }
+    header {
+      background: #1a1a1a;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 2px solid #333;
+    }
+    h1 { margin: 0; }
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      background: #1a1a1a;
+      padding: 0.5rem 0;
+      border-bottom: 2px solid #333;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    nav a:hover { background: #333; }
+    main { padding: 1rem; }
+    section {
+      margin: 1.5rem 0;
+      padding: 1rem;
+      background: #1a1a1a;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+    h2 { color: #ffcc00; }
+    .data-block p { font-size: 1.1rem; }
+    canvas { max-width: 100%; margin: 1rem auto; }
+    footer {
+      background: #1a1a1a;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      border-top: 2px solid #333;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Solar Energy Dashboard</h1>
+  </header>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="#">Formulas</a>
+    <a href="#">Summary</a>
+    <a href="map.html">map</a>
+  </nav>
+  <main>
+    <section id="location-data">
+      <h2>Solar Radiation Data</h2>
+      <p>Latitude: <span id="latitude">--</span></p>
+      <p>Longitude: <span id="longitude">--</span></p>
+      <p>Solar Radiation: <span id="solar-radiation">--</span> kWh/m²</p>
+      <p>Optimal Panel Tilt: <span id="panel-tilt">--</span>°</p>
+    </section>
+    <section id="live-data">
+      <h2>Live Data</h2>
+      <p>Light Intensity: <span id="light-intensity">--</span>%</p>
+      <p>Power Output: <span id="power-output">--</span> W</p>
+      <p>Efficiency: <span id="efficiency">--</span>%</p>
+    </section>
+    <section id="summary">
+      <h2>Summary</h2>
+      <p>Total Energy Generated: <span id="total-energy">--</span> kWh</p>
+      <p>Total Savings: ₹<span id="total-savings">--</span></p>
+    </section>
+  </main>
+  <footer>
+    <p>© 2025 Solar Energy Dashboard. All rights reserved.</p>
+  </footer>
+  <script>
+    // Fetch User Location & Solar Radiation Data
+    function fetchLocationData() {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(async (position) => {
+          let lat = position.coords.latitude;
+          let lon = position.coords.longitude;
+          document.getElementById("latitude").innerText = lat.toFixed(4);
+          document.getElementById("longitude").innerText = lon.toFixed(4);
+          
+          // Dummy Solar Radiation Calculation
+          let solarRadiation = (Math.random() * 6) + 4; // Simulating 4-10 kWh/m²
+          let panelTilt = (lat * 0.9).toFixed(2); // Approximate optimal tilt angle
+          
+          document.getElementById("solar-radiation").innerText = solarRadiation.toFixed(2);
+          document.getElementById("panel-tilt").innerText = panelTilt;
+        });
+      } else {
+        alert("Geolocation not supported.");
+      }
+    }
+    
+    function generateRandomData() {
+      document.getElementById("light-intensity").innerText = (Math.random() * 100).toFixed(2);
+      document.getElementById("power-output").innerText = (Math.random() * 500).toFixed(2);
+      document.getElementById("efficiency").innerText = (Math.random() * 100).toFixed(2);
+      document.getElementById("total-energy").innerText = (Math.random() * 50).toFixed(2);
+      document.getElementById("total-savings").innerText = (Math.random() * 5000).toFixed(2);
+    }
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      fetchLocationData();
+      generateRandomData();
+      setInterval(generateRandomData, 5000); // Update random data every 5 seconds
+    });
+  </script>
+</body>
+</html>

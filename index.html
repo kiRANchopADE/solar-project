@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renewable Energy Project</title>
+    
+</head>
+<body>
+    <header>
+        <h1>Renewable Energy Project</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="calculator.html">Energy Calculator</a>
+            <a href="#">Biomass Calculator</a>
+            <a href="#">About us</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h2>Powering a Sustainable Future</h2>
+        <p>Explore the potential of renewable energy to make the world a cleaner, greener place. Learn, calculate, and take action today!</p>
+        <button onclick="location.href='calculator.html'">Get Started</button>
+    </section>
+
+    <section class="features">
+        <div class="feature-card">
+            <img src="solarpannel.jpg.jpg" alt="Solar Energy">
+            <h3>Solar Energy</h3>
+            <p>Discover how solar energy can reduce your electricity bills and carbon footprint.</p>
+        </div>
+        <div class="feature-card">
+            <img src="windT.jpg.jpg" alt="Wind Energy">
+            <h3>Wind Energy</h3>
+            <p>Learn about the efficiency and benefits of wind turbines for your energy needs.</p>
+        </div>
+        <div class="feature-card">
+            <img src="background.jpg.jpg" alt="Why Renewables?">
+            <h3>Why Renewables?</h3>
+            <p>Understand the environmental and economic advantages of renewable energy sources.</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Renewable Energy Project. All Rights Reserved.</p>
+    </footer>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            color: #fff;
+        }
+
+        header {
+            background: rgba(0, 121, 107, 0.9);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffeb3b;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 10% 50px;
+            background: url('https://source.unsplash.com/1600x900/?renewable-energy,solar') no-repeat center center/cover;
+            color: white;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .hero h2 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            color: #ffeb3b;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .hero button {
+            background: #ffeb3b;
+            color: #00796b;
+            border: none;
+            padding: 15px 40px;
+            font-size: 1.2rem;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: background 0.3s, transform 0.3s;
+            font-weight: bold;
+        }
+
+        .hero button:hover {
+            background: #ff9800;
+            transform: scale(1.1);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 80px 10%;
+            text-align: center;
+        }
+
+        .feature-card {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+            color: #333;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .feature-card img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .feature-card h3 {
+            margin: 20px 0 10px;
+            font-size: 1.8rem;
+            color: #0072ff;
+        }
+
+        .feature-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        footer {
+            background: #00796b;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            margin-top: 50px;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+    </style>
+</body>
+</html>
